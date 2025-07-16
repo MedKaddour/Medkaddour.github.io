@@ -77,8 +77,8 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Install Ruby gems
-        run: bundle install
+
+
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
@@ -91,6 +91,8 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Install Ruby gems
+        run: bundle install
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
