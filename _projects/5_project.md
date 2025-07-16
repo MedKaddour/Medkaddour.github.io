@@ -17,9 +17,9 @@ This work is supervised by **Hélène Coullon** and **Baptiste Jonglez**, and ta
 
 ### 🧠 Project Goal
 
-- Combine Ansible's widespread usage and simplicity  
-- With **Concerto's formal coordination model**  
-- To produce a tool that supports **adaptive and reactive orchestration**  
+- Combine Ansible's widespread usage and simplicity
+- With **Concerto's formal coordination model**
+- To produce a tool that supports **adaptive and reactive orchestration**
 
 This would enable developers and DevOps engineers to write expressive, **dependency-aware**, and **resilient playbooks** that adapt to real-time system behavior.
 

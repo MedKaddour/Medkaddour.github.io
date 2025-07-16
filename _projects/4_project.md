@@ -20,23 +20,26 @@ It focused on designing, implementing, and evaluating adaptive systems capable o
 
 Over the course of the project, I worked with a wide range of tools and technologies, covering the full edge-to-cloud lifecycle:
 
-- **Containerization & Orchestration**:  
-  - Docker  
-  - k3s / Kubernetes  
+- **Containerization & Orchestration**:
 
-- **Monitoring & Observability**:  
-  - Prometheus (metrics collection)  
-  - Grafana (dashboards)  
-  - OpenTelemetry (instrumentation)  
-  - Zipkin / Jaeger (distributed tracing)  
+  - Docker
+  - k3s / Kubernetes
 
-- **Chaos Engineering & Testing**:  
-  - **Chaos Mesh** (fault injection and resilience testing)  
+- **Monitoring & Observability**:
 
-- **Infrastructure & Deployment**:  
-  - Helm charts  
-  - CI/CD workflows  
-  - YAML-based configuration for microservices  
+  - Prometheus (metrics collection)
+  - Grafana (dashboards)
+  - OpenTelemetry (instrumentation)
+  - Zipkin / Jaeger (distributed tracing)
+
+- **Chaos Engineering & Testing**:
+
+  - **Chaos Mesh** (fault injection and resilience testing)
+
+- **Infrastructure & Deployment**:
+  - Helm charts
+  - CI/CD workflows
+  - YAML-based configuration for microservices
 
 ---
 
@@ -47,6 +50,7 @@ The full project is **publicly available on INRIA’s GitLab**:
 👉 [INRIA GitLab – edge-to-cloud-video-processing](https://gitlab.inria.fr/STACK-RESEARCH-GROUP/software/edge-to-cloud-video-processing)
 
 This use case includes:
+
 - A **motion detection module** at the edge
 - An **object recognition module** in the cloud using a YOLO model
 - Instrumentation and monitoring of components to track latency, throughput, and resource usage
@@ -57,6 +61,7 @@ This use case includes:
 ### 🎯 Outcome
 
 This project allowed me to:
+
 - Design adaptive edge-to-cloud systems from scratch
 - Integrate modern observability and chaos engineering practices
 - Use **Grid'5000** for reproducible experiments at scale

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PhD Thesis
-description:  PhD Thesis on Soft Sensors and Smart Energy (2016–2023)
+description: PhD Thesis on Soft Sensors and Smart Energy (2016–2023)
 img: assets/img/img_3.png
 importance: 3
 category: work
@@ -13,9 +13,9 @@ Initially, the focus of my thesis was on the theoretical modeling of soft sensor
 
 This shift in application led me to explore:
 
-- **Non-Intrusive Load Monitoring (NILM)** techniques  
-- **Machine learning** algorithms for time-series energy data  
-- **Deep learning** architectures for event detection and appliance disaggregation  
+- **Non-Intrusive Load Monitoring (NILM)** techniques
+- **Machine learning** algorithms for time-series energy data
+- **Deep learning** architectures for event detection and appliance disaggregation
 - The integration of **contextual and behavioral features** into predictive energy models
 
 My thesis contributed to the development of intelligent systems capable of improving energy awareness and reducing consumption without relying on hardware-based sensors.
@@ -26,8 +26,8 @@ My thesis contributed to the development of intelligent systems capable of impro
 
 Alongside my research, I had the opportunity to:
 
-- Teach **Advanced Operating Systems** to third-year undergraduate students (L3)  
-- Co-supervise **Master's final projects (PFE)** in topics related to systems, energy, and machine learning  
+- Teach **Advanced Operating Systems** to third-year undergraduate students (L3)
+- Co-supervise **Master's final projects (PFE)** in topics related to systems, energy, and machine learning
 
 This experience helped strengthen my academic communication, mentoring abilities, and curriculum development skills.
 

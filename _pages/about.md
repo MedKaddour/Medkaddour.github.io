@@ -38,7 +38,7 @@ I work with technologies such as **Kubernetes**, **Prometheus**, **OpenTelemetry
 
 ## Motto
 
-> *"Fail, learn, adapt, repeat."*
+> _"Fail, learn, adapt, repeat."_
 
 ---
 

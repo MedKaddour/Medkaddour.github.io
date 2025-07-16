@@ -28,9 +28,7 @@
       "startDate": "2024-12-01",
       "endDate": "2026-11-30",
       "summary": "developing an extension for Ansible that integrates the coordination mechanisms of Concerto.",
-      "highlights": [
-        "Integrate Concerto with Ansible",
-      ]
+      "highlights": ["Integrate Concerto with Ansible"]
     },
     {
       "name": "STACK/IMT Atlantique",
@@ -38,10 +36,7 @@
       "startDate": "2023-12-01",
       "endDate": "2024-11-30",
       "summary": "Research and development in Edge-to-Cloud continuum, including feedback mechanisms and Ansible integration.",
-      "highlights": [
-        "Developed adaptive feedback mechanisms",
-        "Executed experiments on Grid’5000"
-      ]
+      "highlights": ["Developed adaptive feedback mechanisms", "Executed experiments on Grid’5000"]
     },
     {
       "name": "Groupe Kherbouche",
