@@ -1,0 +1,156 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Sidi Mohammed Kaddour
+    - name: Contact
+      value: medkaddourr@gmail.com
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD in Networks and Distributed Systems
+      institution: University of Tlemcen, Algeria
+      year: 2016 - 2023
+    - title: Master's Degree in Networks and Distributed Systems
+      institution: University of Tlemcen, Algeria
+      year: 2014 - 2016
+    - title: Bachelor's Degree in Computer Science
+      institution: University of Tlemcen, Algeria
+      year: 2011 - 2014
+    - title: Baccalaureate Degree in Sciences
+      institution: Mostafa Mostfai High School, Nedroma, Algeria
+      year: 2008 - 2011
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: R&D Engineer
+      institution: STACK/INRIA, Nantes, France
+      year: Dec2024–Nov2026
+      description:
+        - Integrating Concerto with Ansible for Efficient Reconfiguration
+    - title: R&D Engineer
+      institution: STACK/IMT Atlantique, Nantes, France
+      year: Dec2023–Nov2024
+      description:
+        - Feedback mechanisms for Edge-to-Cloud Applications
+    - title: ERP Project Manager
+      institution: Groupe Kherbouche, Tlemcen, Algeria
+      year: Jul2018–Sep2023
+    - title: Visiting PhD Student
+      institution: Bournemouth University, UK
+      year: Jun2019–Aug 2019
+      description:
+        - Smart energy solution using machine learning
+    - title: Temporary University Teacher
+      institution: University of Tlemcen, Algeria
+      year: Sep2017–Sep2020
+      description:
+        - Courses on Advanced Operating Systems and Cloud Computing
+    - title: Remote Delphi Developer
+      institution: Soft Builder, Tlemcen, Algeria
+      year: Apr2014–Nov2016
+
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Advanced Operating Systems
+      period: 2017–2020
+      institution: University of Tlemcen, Algeria
+      level: Bachelor (Year 3)
+      responsible: Samir Benaissa
+      description: Hands-on course using Ubuntu Linux. Topics included shell commands, file and network management, and C programming for process management, scheduling, synchronization, signals, and IPC.
+    - title: Cloud Computing
+      period: 2018–2019
+      institution: University of Tlemcen, Algeria
+      level: Master (Year 2)
+      responsible: Zeyneb Bensafi
+      description: Introduction to Eclipse Cloud Dev-Tool in Java. Covered environment setup, project creation, and deploying cloud applications.
+    - title: Signal Processing
+      period: 2018–2019
+      institution: University of Tlemcen, Algeria
+      level: Master (Year 1, Telecommunications)
+      responsible: Hichem Hachemi
+      description: Introduction to signal analysis using MATLAB. Focused on audio signals and feature extraction techniques.
+    - title: Middleware (XMS3IU010)
+      period: Sep–Dec 2024
+      institution: University of Nantes, France
+      level: Master (Year 2)
+      duration: 24 hours (6h40 theory, 17h20 practicals)
+      responsible: Daniel Balouek
+      description: Covered Cloud and Edge platforms, including OpenStack deployment, Docker and Kubernetes usage, multi-tier observability, and lifecycle adaptation.
+    - title: DevOps Training (FIL Continuing Education)
+      period: May–Jun 2025
+      institution: IMT Atlantique, France
+      level: Continuing Education
+      responsible: Hélène Coullon
+      description: Covered DevOps principles including CI/CD pipelines, Docker, infrastructure as code, and deployment automation.
+
+- title: Supervision Activities
+  type: time_table
+  contents:
+    - title: Daily Activity Detection in Smart Homes
+      year: 2022
+      institution: University of Tlemcen, Algeria
+      student: BEDRANE Bouchra
+      responsible: Sidi Mohammed Kaddour
+      type: Master's Internship
+    - title: Deep Clustering for Non-Intrusive Electrical Device Monitoring
+      year: 2020
+      institution: University of Tlemcen, Algeria
+      student: DIABI Heythem
+      responsible: Sidi Mohammed Kaddour
+      type: Master's Internship
+    - title: Anomaly Detection in Electricity Consumption
+      year: 2019
+      institution: University of Tlemcen, Algeria
+      students:
+        - KARZAZI Hayat
+        - LARBAOUI Maghnia
+      responsible: Sidi Mohammed Kaddour
+      type: Master's Internship
+
+- title: Open Source Projects
+  type: time_table
+  contents:
+    - title: edge to cloud video processing use-case
+      year: 2024
+      description: Motion detection and object recognition pipeline with feedback loop and monitoring.
+
+- title: Trainings and certeficats
+  type: time_table
+  contents:
+    - year: 2021
+      institution: InterEntreprise
+      title: ISO 19011 Internal Auditor Certification
+    - year: 2022
+      institution: InterEntreprise
+      title: ISO 9001 Training
+    - year: 2021
+      institution: IBNROCHD
+      title: ITIL V4 Foundation Training
+
+- title: Academic Interests
+  type: nested_list
+  contents:
+    - title: Edge-to-Cloud Computing
+      items:
+        - Adaptive systems
+        - Monitoring and observability
+    - title: Machine Learning
+      items:
+        - Smart energy
+        - Time-series and anomaly detection
+
+- title: languages
+  type: list
+  contents:
+    - Arabic (Fluent)
+    - English (Proficient)
+    - French (Intermediate)
+
+- title: Other Interests
+  type: list
+  contents:
+    - <u>Hobbies:</u> Drawing, Mobile Game Development, Travel
