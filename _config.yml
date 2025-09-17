@@ -272,9 +272,7 @@ scholar:
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
-  # Note: if you have latex math in your bibtex, the latex filter
-  # preprocessing may conflict with MathJAX if the latter is enabled.
-  # See https://github.com/alshedivat/al-folio/issues/357.
+
   bibtex_filters: [latex, smallcaps, superscript]
 
   replace_strings: true
@@ -286,6 +284,10 @@ scholar:
   query: "@*"
   group_by: year
   group_order: descending
+
+  # 👇 Add these two lines
+  sort_by: year
+  order: descending
 
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
