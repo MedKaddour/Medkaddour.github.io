@@ -78,7 +78,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "projects-erbuilder",
+            },},{id: "news-exciting-news-i-am-honored-to-serve-as-co-web-chair-for-the-18th-ieee-acm-international-conference-on-utility-and-cloud-computing-ucc-2025-and-the-12th-ieee-acm-international-conference-on-big-data-computing-applications-and-technologies-bdcat-2025-which-will-be-held-in-nantes-france-looking-forward-to-contributing-to-the-success-of-these-conferences",
+          title: '📰 Exciting News! I am honored to serve as Co-Web Chair for the...',
+          description: "",
+          section: "News",},{id: "projects-erbuilder",
           title: 'ERBuilder',
           description: "Exploring data modeling and SQL generation across SGBDs",
           section: "Projects",handler: () => {
