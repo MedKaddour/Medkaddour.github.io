@@ -20,7 +20,7 @@ footer_text: >
 keywords: distributed systems, edge computing, urgent computing, feedback mechanisms, continuum
 lang: en
 icon: favicon.svg
-
+favicon: assets/img/prof_pic.png
 github_username: MedKaddour
 gitlab_username: sikaddou
 gitlab_url: https://gitlab.inria.fr/sikaddou
