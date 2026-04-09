@@ -4,7 +4,7 @@ title: GKOS InterEntreprise
 description: From Senior Odoo Developer to ERP Project Manager (2018–2023)
 img: assets/img/img_4.png
 importance: 4
-category: work
+category: industry
 ---
 
 From 2018 to 2023, I worked at **Kherbouche Enterprise InterEntreprise**, where I started as a **Senior Odoo (OpenERP) Developer** and later became the **Project Manager** for their ERP systems.

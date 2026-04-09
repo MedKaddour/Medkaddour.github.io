@@ -1,4 +1,4 @@
-FROM ruby:slim
+FROM ruby:3.3-slim
 
 # uncomment these if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
@@ -7,7 +7,7 @@ FROM ruby:slim
 # ARG USERID=901
 # ARG USERNAME=jekyll
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 LABEL authors="Amir Pourmand,George Araújo" \
       description="Docker image for al-folio academic template" \
@@ -53,16 +53,16 @@ ENV EXECJS_RUNTIME=Node \
 # create a directory for the jekyll site
 RUN mkdir /srv/jekyll
 
-# copy the Gemfile and Gemfile.lock to the image
-ADD Gemfile.lock /srv/jekyll
-ADD Gemfile /srv/jekyll
+# Copy the Gemfile only. This repo does not track Gemfile.lock, so requiring it
+# during the image build breaks local Docker workflows.
+COPY Gemfile /srv/jekyll/
 
 # set the working directory
 WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
-RUN gem install --no-document jekyll bundler
-RUN bundle install --no-cache
+RUN gem install --no-document jekyll bundler:2.6.9
+RUN bundle _2.6.9_ install --no-cache
 
 EXPOSE 8080
 

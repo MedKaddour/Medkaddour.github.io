@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Each of these projects represents a challenge I took on, a technology I explored, or a problem I helped solve.
+description: Selected research and engineering work across distributed systems, automation, data tooling, and applied machine learning.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [research, industry]
 horizontal: false
 ---
 

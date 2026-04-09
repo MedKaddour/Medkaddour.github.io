@@ -55,7 +55,10 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="{{ title }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta
+    property="og:title"
+    content="{% if page.url == '/' %}{{ title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}"
+  >
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
@@ -65,7 +68,10 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta
+    name="twitter:title"
+    content="{% if page.url == '/' %}{{ title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}"
+  >
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
@@ -164,8 +170,11 @@
     {% capture link %}https://keybase.io/{{ site.keybase_username }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
-  {% if site.gitlab_username %}
-    {% capture link %}https://gitlab.inria.com/{{ site.gitlab_username }}{% endcapture %}
+  {% if site.gitlab_url %}
+    {% capture link %}{{ site.gitlab_url }}{% endcapture %}
+    {% assign sameaslinks = sameaslinks | push: link %}
+  {% elsif site.gitlab_username %}
+    {% capture link %}https://gitlab.inria.fr/{{ site.gitlab_username }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.dblp_url %}
@@ -216,10 +225,6 @@
     {% capture link %}https://www.zotero.org/{{ site.zotero_username }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
-  {% if sameaslinks != blank %}
-    {% assign sameaslinks = sameaslinks | split: '' %}
-  {% endif %}
-
   <script type="application/ld+json">
     {
         "author":
@@ -232,7 +237,7 @@
         "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
         "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
         {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks }},
+        "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}
         "name": "{{ author_name }}",
         "@context": "https://schema.org"

@@ -4,7 +4,7 @@ title: PhD Thesis
 description: PhD Thesis on Soft Sensors and Smart Energy (2016–2023)
 img: assets/img/img_3.png
 importance: 3
-category: work
+category: research
 ---
 
 Between **2016 and 2023**, I conducted my doctoral research on the topic of **soft sensors for complex systems**. My work was co-supervised by **Professor Mohammed Lehsaini** at the **University of Tlemcen (Algeria)** and **Professor Hamid Bouchachia** at **Bournemouth University (UK)**.

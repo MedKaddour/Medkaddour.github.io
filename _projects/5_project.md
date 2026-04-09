@@ -4,7 +4,7 @@ title: R&D Engineer at INRIA
 description: CoAnsible - Extending Ansible with Concerto for automated orchestration
 img: assets/img/img_1.png
 importance: 1
-category: work
+category: research
 ---
 
 I am currently working as a **Research Engineer at Inria** within the **STACK team**, where I am developing an **extension for Ansible** that integrates the **coordination mechanisms of Concerto**, a high-level model for orchestrating distributed applications.

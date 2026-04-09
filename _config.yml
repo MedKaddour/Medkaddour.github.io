@@ -7,21 +7,29 @@
 # -----------------------------------------------------------------------------
 
 title: Sidi Mohammed Kaddour
-first_name: Mohammed
-middle_name: Sidi
+first_name: Sidi
+middle_name: Mohammed
 last_name: Kaddour
 contact_note: >
-  The best way to reach me is via email or through linkedin.
+  The best way to reach me is via email or LinkedIn.
 description: >
-  Researcher in distributed systems, urgent computing, and feedback mechanisms for edge-to-cloud applications.
+  Research engineer working on distributed systems, observability, and feedback-driven edge-to-cloud applications.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.
+  Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: distributed systems, edge computing, urgent computing, feedback mechanisms, continuum
 lang: en
-icon: ⚛️
+icon: favicon.svg
 
-url: https://sidimohammedkaddour.github.io
+github_username: MedKaddour
+gitlab_username: sikaddou
+gitlab_url: https://gitlab.inria.fr/sikaddou
+linkedin_username: kaddour-sidi-mohammed-phd-1551a1110
+orcid_id: 0000-0002-2745-4024
+scholar_userid: UFnOqHEAAAAJ
+dblp_url: https://dblp.org/pid/301/2151.html
+
+url: https://medkaddour.github.io
 baseurl: # leave blank for root
 
 # -----------------------------------------------------------------------------
@@ -32,7 +40,7 @@ baseurl: # leave blank for root
 repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_trophies:
-  enabled: true
+  enabled: false
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
@@ -47,14 +55,14 @@ repo_trophies:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 980px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -63,9 +71,9 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: https://medkaddour.github.io/assets/img/prof_pic_color.jpg # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -256,15 +264,15 @@ jekyll-archives:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
 display_tags: ["announcement", "research", "career", "code", "edge"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Kaddour]
+  first_name: [Sidi Mohammed, Sidi-Mohammed, S.]
 
   style: apa
   locale: en
@@ -442,7 +450,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700|IBM+Plex+Serif:400,500,600,700|Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

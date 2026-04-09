@@ -4,7 +4,7 @@ title: ERBuilder
 description: Exploring data modeling and SQL generation across SGBDs
 img: assets/img/img_5.png
 importance: 5
-category: work
+category: industry
 related_publications: true
 ---
 

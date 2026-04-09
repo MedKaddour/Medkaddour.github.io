@@ -28,11 +28,52 @@ latest_posts:
   limit: 3
 ---
 
-I am a research and development engineer at [Inria](https://www.inria.fr), affiliated with the STACK team. I focus on **feedback mechanisms and performance monitoring for Edge-to-Cloud applications**, working on **distributed systems**, **urgent computing**, and **resource-aware service placement**.
+<p class="home-kicker">Research engineer at Inria STACK</p>
 
-Currently, I develop and integrate **CoAnsible**, an extension of Ansible that enhances automation across heterogeneous compute environments.
+<p class="home-lead">
+  I design feedback-driven systems for the edge-to-cloud continuum, with a focus on observability,
+  orchestration, and adaptive deployment.
+</p>
 
-I work with technologies such as **Kubernetes**, **Prometheus**, **OpenTelemetry**, and **Ansible**, and often experiment on platforms like **Grid’5000**.
+<div class="focus-tags">
+  <span>Distributed Systems</span>
+  <span>Observability</span>
+  <span>Edge-to-Cloud</span>
+  <span>Ansible</span>
+  <span>Kubernetes</span>
+  <span>Grid'5000</span>
+</div>
+
+<div class="home-actions">
+  <a class="home-button primary" href="/projects/">Explore projects</a>
+  <a class="home-button secondary" href="/publications/">Selected publications</a>
+  <a class="home-button secondary" href="/cv/">Open CV</a>
+</div>
+
+<div class="signal-grid">
+  <div class="signal-card">
+    <h3>Current work</h3>
+    <p>
+      At <a href="https://www.inria.fr">Inria</a>, I am developing <strong>CoAnsible</strong>, an
+      extension that brings coordination logic from Concerto into complex distributed deployments.
+    </p>
+  </div>
+  <div class="signal-card">
+    <h3>Technical focus</h3>
+    <p>
+      My work combines <strong>OpenTelemetry</strong>, <strong>Prometheus</strong>,
+      <strong>Kubernetes</strong>, and <strong>Ansible</strong> to build measurable and adaptive
+      systems.
+    </p>
+  </div>
+  <div class="signal-card">
+    <h3>Research scope</h3>
+    <p>
+      I work across runtime monitoring, feedback loops, resource-aware placement, and reproducible
+      experiments on heterogeneous infrastructures.
+    </p>
+  </div>
+</div>
 
 ---
 
@@ -42,4 +83,4 @@ I work with technologies such as **Kubernetes**, **Prometheus**, **OpenTelemetry
 
 ---
 
-You can view my ongoing projects, selected publications, and get in touch through the contact info or social links below.
+You can start with my projects, publications, or CV below, then reach out through the contact links if you'd like to discuss research, engineering, or collaboration.

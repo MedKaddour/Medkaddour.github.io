@@ -2,83 +2,110 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Overview of my teachings, supervision.
+description: Courses, trainings, and supervision activities across systems, cloud, DevOps, and applied computing.
 nav: false
 nav_order: 6
 ---
 
-## 🧑‍🏫 Teaching Experience
+{% assign teaching_section = site.data.cv | where: "title", "Teaching Experience" | first %}
+{% assign supervision_section = site.data.cv | where: "title", "Supervision Activities" | first %}
 
-1. **Advanced Operating Systems**
+<div class="teaching-hero">
+  <p class="home-kicker">Teaching and mentoring</p>
+  <p class="home-lead">
+    I teach systems, cloud, middleware, and DevOps topics with a practical orientation, and I also
+    supervise applied student work in smart energy and data-driven systems.
+  </p>
 
-   - **Period**: 2017–2020
-   - **Institution**: University of Tlemcen, Algeria
-   - **Level**: Bachelor (Year 3)
-   - **Responsible**: Samir Benaissa
-   - **Description**:  
-     Hands-on course using Ubuntu Linux. Topics included shell commands, file and network management, and C programming for process management, scheduling, synchronization (semaphores and monitors), signals, and inter-process communication.
+  <div class="teaching-stats">
+    <div class="teaching-stat">
+      <span class="teaching-stat-value">{{ teaching_section.contents | size }}</span>
+      <span class="teaching-stat-label">courses and trainings</span>
+    </div>
+    <div class="teaching-stat">
+      <span class="teaching-stat-value">{{ supervision_section.contents | size }}</span>
+      <span class="teaching-stat-label">supervision projects</span>
+    </div>
+    <div class="teaching-stat">
+      <span class="teaching-stat-value">2017-present</span>
+      <span class="teaching-stat-label">teaching period</span>
+    </div>
+  </div>
 
-2. **Cloud Computing**
+  <div class="focus-tags">
+    <span>Operating Systems</span>
+    <span>Cloud Computing</span>
+    <span>Middleware</span>
+    <span>DevOps</span>
+    <span>Signal Processing</span>
+    <span>Applied Supervision</span>
+  </div>
+</div>
 
-   - **Period**: 2018–2019
-   - **Institution**: University of Tlemcen, Algeria
-   - **Level**: Master (Year 2)
-   - **Responsible**: Zeyneb Bensafi
-   - **Description**:  
-     Introduction to Eclipse Cloud Dev-Tool in Java. Covered environment setup, project creation, and deploying cloud applications.
+## Teaching Experience
 
-3. **Signal Processing**
+<div class="teaching-grid">
+  {% for item in teaching_section.contents %}
+    <article class="teaching-card">
+      <div class="teaching-card-top">
+        {% if item.period %}
+          <span class="teaching-badge">{{ item.period }}</span>
+        {% endif %}
+        {% if item.level %}
+          <span class="teaching-badge subtle">{{ item.level }}</span>
+        {% endif %}
+      </div>
 
-   - **Period**: 2018–2019
-   - **Institution**: University of Tlemcen, Algeria
-   - **Level**: Master (Year 1, Telecommunications)
-   - **Responsible**: Hichem Hachemi
-   - **Description**:  
-     Introduction to signal analysis using MATLAB. Focused on audio signals and feature extraction techniques.
+      <h3>{{ item.title }}</h3>
+      <p class="teaching-card-meta">{{ item.institution }}</p>
 
-4. **Middleware (Course Code: XMS3IU010)**
+      <div class="teaching-card-notes">
+        {% if item.responsible %}
+          <p><strong>Responsible:</strong> {{ item.responsible }}</p>
+        {% endif %}
+        {% if item.duration %}
+          <p><strong>Duration:</strong> {{ item.duration }}</p>
+        {% endif %}
+      </div>
 
-   - **Period**: September–December 2024
-   - **Institution**: University of Nantes, France
-   - **Level**: Master (Year 2)
-   - **Duration**: 24 hours (6h40 theory, 17h20 practicals)
-   - **Responsible**: Daniel Balouek
-   - **Description**:  
-     Covered Cloud and Edge platforms, including OpenStack deployment, Docker and Kubernetes usage, multi-tier observability, and lifecycle adaptation.
+      <p>{{ item.description }}</p>
+    </article>
+  {% endfor %}
+</div>
 
-5. **DevOps Training (FIL Continuing Education)**
-   - **Period**: May–June 2025
-   - **Institution**: IMT Atlantique, France
-   - **Level**: Continuing Education
-   - **Responsible**: Hélène Coullon
-   - **Description**:  
-     Covered DevOps principles including CI/CD pipelines, Docker, infrastructure as code, and deployment automation.
+## Supervision Activities
 
----
+<div class="teaching-grid supervision-grid">
+  {% for item in supervision_section.contents %}
+    {% if item.student %}
+      {% assign student_names = item.student %}
+    {% elsif item.students %}
+      {% assign student_names = item.students | join: ", " %}
+    {% else %}
+      {% assign student_names = "" %}
+    {% endif %}
 
-## 👨‍🎓 Supervision Activities
+    <article class="teaching-card supervision-card">
+      <div class="teaching-card-top">
+        {% if item.year %}
+          <span class="teaching-badge">{{ item.year }}</span>
+        {% endif %}
+        {% if item.type %}
+          <span class="teaching-badge subtle">{{ item.type }}</span>
+        {% endif %}
+      </div>
 
-1. **Daily Activity Detection in Smart Homes**
+      <h3>{{ item.title }}</h3>
+      <p class="teaching-card-meta">{{ item.institution }}</p>
 
-   - **Year**: 2022
-   - **Institution**: University of Tlemcen, Algeria
-   - **Student**: BEDRANE Bouchra
-   - **Responsible**: Sidi Mohammed Kaddour
-   - **Type**: Master's Internship
-
-2. **Deep Clustering for Non-Intrusive Electrical Device Monitoring**
-
-   - **Year**: 2020
-   - **Institution**: University of Tlemcen, Algeria
-   - **Student**: DIABI Heythem
-   - **Responsible**: Sidi Mohammed Kaddour
-   - **Type**: Master's Internship
-
-3. **Anomaly Detection in Electricity Consumption**
-   - **Year**: 2019
-   - **Institution**: University of Tlemcen, Algeria
-   - **Students**: KARZAZI Hayat and LARBAOUI Maghnia
-   - **Responsible**: Sidi Mohammed Kaddour
-   - **Type**: Master's Internship
-
----
+      <div class="teaching-card-notes">
+        {% if student_names != "" %}
+          <p><strong>Student{% if item.students %}s{% endif %}:</strong> {{ student_names }}</p>
+        {% endif %}
+        {% if item.responsible %}
+          <p><strong>Supervisor:</strong> {{ item.responsible }}</p>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>

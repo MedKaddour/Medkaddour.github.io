@@ -5,7 +5,7 @@ description: Feedback mechanisms for Edge-to-Cloud applications
 img: assets/img/img_2.png
 
 importance: 2
-category: work
+category: research
 ---
 
 During a one-year project at **STACK Team - IMT Atlantique**, I worked as a **Research and Development Engineer** on feedback mechanisms for **Edge-to-Cloud applications**,  
