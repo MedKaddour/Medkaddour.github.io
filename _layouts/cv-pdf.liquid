@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
+    <link
+      rel="stylesheet"
+      href="{{ site.third_party_libraries.mdb.url.css }}"
+      integrity="{{ site.third_party_libraries.mdb.integrity.css }}"
+      crossorigin="anonymous"
+    >
+    <link defer rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url | bust_file_cache }}">
+    <link defer rel="stylesheet" href="{{ '/assets/css/scholar-icons.css' | relative_url | bust_file_cache }}">
+    <link
+      defer
+      rel="stylesheet"
+      type="text/css"
+      href="{{ site.third_party_libraries.google_fonts.url.fonts }}"
+    >
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+    <style>
+      body.cv-pdf-page {
+        background: #fff !important;
+        color: #1f1f1f !important;
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .cv-pdf-page h1,
+      .cv-pdf-page h2,
+      .cv-pdf-page h3,
+      .cv-pdf-page h4,
+      .cv-pdf-page h5,
+      .cv-pdf-page h6 {
+        font-family: "IBM Plex Serif", serif;
+      }
+
+      .cv-pdf-shell {
+        max-width: 8.27in;
+        margin: 0 auto;
+        padding: 0.38in 0.48in 0.46in;
+      }
+
+      .cv-pdf-header {
+        margin-bottom: 0.85rem;
+        padding-bottom: 0.7rem;
+        border-bottom: 2px solid rgba(143, 63, 42, 0.18);
+      }
+
+      .cv-pdf-kicker {
+        margin-bottom: 0.4rem;
+        color: #8f3f2a;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .cv-pdf-hero {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .cv-pdf-identity {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .cv-pdf-header .post-title {
+        margin: 0 0 0.2rem;
+        font-size: 2.05rem;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+      }
+
+      .cv-pdf-role {
+        margin: 0;
+        color: #5b5b5b;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .cv-pdf-contact {
+        display: flex;
+        flex: 0 1 18rem;
+        flex-wrap: wrap;
+        gap: 0.32rem 0.38rem;
+        justify-content: flex-end;
+      }
+
+      .cv-pdf-contact-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.18rem 0.5rem;
+        border-radius: 999px;
+        background: rgba(143, 63, 42, 0.08);
+        color: #5b5b5b !important;
+        font-size: 0.7rem;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .cv-pdf-shell .cv-pdf-contact-item:hover {
+        color: #5b5b5b !important;
+      }
+
+      .cv-pdf-shell .post-description,
+      .cv-pdf-summary {
+        max-width: none;
+        margin: 0.6rem 0 0;
+        color: #444;
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .cv-pdf-shell .card {
+        margin-top: 0.72rem !important;
+        padding: 0.48rem 0 0 !important;
+        border: 0 !important;
+        border-top: 1px solid rgba(15, 23, 42, 0.1) !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .cv-pdf-shell .card-title {
+        margin-bottom: 0.48rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: #8f3f2a;
+        break-after: avoid-page;
+        page-break-after: avoid;
+      }
+
+      .cv-pdf-shell .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .cv-pdf-shell .ml-1,
+      .cv-pdf-shell .ml-md-4,
+      .cv-pdf-shell .mr-1,
+      .cv-pdf-shell .mr-md-4 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .cv-pdf-shell .mt-2,
+      .cv-pdf-shell .mt-md-0 {
+        margin-top: 0 !important;
+      }
+
+      .cv-pdf-shell .list-group.list-group-flush,
+      .cv-pdf-shell .card-text.list-group {
+        margin: 0;
+        padding-left: 0;
+        list-style: none !important;
+      }
+
+      .cv-pdf-shell .list-group-item {
+        padding: 0.32rem 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        list-style: none !important;
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .cv-pdf-shell .list-group-item::marker,
+      .cv-pdf-shell .list-group::marker {
+        content: "" !important;
+      }
+
+      .cv-pdf-shell .list-group-item + .list-group-item {
+        border-top: 1px dashed rgba(15, 23, 42, 0.08) !important;
+      }
+
+      .cv-pdf-shell .date-column {
+        width: 16%;
+        flex: 0 0 16%;
+        max-width: 16%;
+        padding: 0 0.35rem 0 0;
+      }
+
+      .cv-pdf-shell .date-column + div {
+        width: 84%;
+        flex: 0 0 84%;
+        max-width: 84%;
+        padding: 0;
+      }
+
+      .cv-pdf-shell .badge {
+        display: inline-block;
+        min-width: 0 !important;
+        padding: 0.15rem 0.46rem !important;
+        border-radius: 999px !important;
+        background: rgba(143, 63, 42, 0.12) !important;
+        color: #8f3f2a !important;
+        font-size: 0.58rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em;
+        box-shadow: none !important;
+      }
+
+      .cv-pdf-shell .title {
+        margin-bottom: 0.12rem;
+        font-size: 0.93rem;
+        line-height: 1.25;
+      }
+
+      .cv-pdf-shell .title a,
+      .cv-pdf-shell a,
+      .cv-pdf-shell a:hover {
+        color: #1f1f1f !important;
+        text-decoration: none !important;
+      }
+
+      .cv-pdf-shell h6 {
+        margin-bottom: 0.14rem;
+        font-size: 0.84rem;
+        line-height: 1.35;
+      }
+
+      .cv-pdf-shell h6[style*="font-style: italic"] {
+        color: #4d4d4d;
+      }
+
+      .cv-pdf-shell .location {
+        margin: 0.22rem 0 0;
+        font-size: 0.63rem;
+        color: #666;
+      }
+
+      .cv-pdf-shell .items {
+        margin: 0.22rem 0 0;
+        padding-left: 0.85rem;
+        font-size: 0.79rem;
+      }
+
+      .cv-pdf-shell .items li {
+        margin-bottom: 0.06rem;
+      }
+
+      .cv-pdf-shell .table-cv-map td {
+        padding-top: 0.2rem !important;
+        padding-bottom: 0.2rem !important;
+        vertical-align: top !important;
+      }
+
+      .cv-pdf-shell .table-cv-map td:first-child {
+        width: 5rem;
+        color: #6a6a6a;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .cv-pdf-shell .table-cv-map td.text {
+        font-size: 0.85rem;
+      }
+
+      .cv-pdf-shell .list-groups {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.15rem 1rem;
+      }
+
+      .cv-pdf-shell .list-group.col-md-6 {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0.2rem;
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .cv-pdf-shell .list-group-category {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .cv-pdf-shell .list-group-name {
+        font-size: 0.78rem;
+      }
+
+      .cv-pdf-shell .list-group-table {
+        margin-bottom: 0;
+      }
+
+      .cv-pdf-shell .list-group-table td {
+        padding-top: 0.05rem;
+        padding-bottom: 0.05rem;
+        vertical-align: top;
+      }
+
+      .cv-pdf-shell .table-cv-map {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 700px) {
+        .cv-pdf-hero {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .cv-pdf-contact {
+          justify-content: flex-start;
+        }
+
+        .cv-pdf-shell .list-groups {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="cv-pdf-page">
+    {% assign basics = site.data.resume.basics %}
+    <main class="cv-pdf-shell">
+      <header class="post-header cv-pdf-header">
+        {% if basics %}
+          {% capture location_line %}
+            {% if basics.location.city %}{{ basics.location.city }}{% endif %}
+            {% if basics.location.region %}
+              {% if basics.location.city %}, {% endif %}
+              {{ basics.location.region }}
+            {% endif %}
+            {% if basics.location.countryCode %}
+              {% if basics.location.city or basics.location.region %}, {% endif %}
+              {{ basics.location.countryCode }}
+            {% endif %}
+          {% endcapture %}
+          {% assign location_line = location_line | strip %}
+
+          <p class="cv-pdf-kicker">{{ page.title }}</p>
+          <div class="cv-pdf-hero">
+            <div class="cv-pdf-identity">
+              <h1 class="post-title">{{ basics.name }}</h1>
+              {% if basics.label %}
+                <p class="cv-pdf-role">{{ basics.label | strip }}</p>
+              {% endif %}
+            </div>
+
+            <div class="cv-pdf-contact">
+              {% if basics.email %}
+                <a class="cv-pdf-contact-item" href="mailto:{{ basics.email }}">{{ basics.email }}</a>
+              {% endif %}
+              {% if basics.phone %}
+                <a class="cv-pdf-contact-item" href="tel:{{ basics.phone }}">{{ basics.phone }}</a>
+              {% endif %}
+              {% if basics.url %}
+                <a class="cv-pdf-contact-item" href="{{ basics.url }}">{{ basics.url | remove: 'https://' | remove: 'http://' }}</a>
+              {% endif %}
+              {% if location_line != '' %}
+                <span class="cv-pdf-contact-item">{{ location_line }}</span>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if basics.summary %}
+            <p class="cv-pdf-summary">{{ basics.summary }}</p>
+          {% elsif page.description %}
+            <p class="post-description">{{ page.description }}</p>
+          {% endif %}
+        {% else %}
+          <h1 class="post-title">{{ page.title }}</h1>
+          {% if page.description %}
+            <p class="post-description">{{ page.description }}</p>
+          {% endif %}
+        {% endif %}
+      </header>
+
+      <article>
+        {% include cv/render.liquid pdf_mode=true %}
+      </article>
+    </main>
+  </body>
+</html>
