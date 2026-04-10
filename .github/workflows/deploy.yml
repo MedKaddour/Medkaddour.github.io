@@ -82,6 +82,8 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
+      - name: Setup Chrome 🌐
+        uses: browser-actions/setup-chrome@v1
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -93,9 +95,11 @@ jobs:
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
+          pip3 install --upgrade nbconvert playwright
           export JEKYLL_ENV=production
           bundle exec jekyll build
+      - name: Generate CV PDF 📄
+        run: python3 scripts/generate_cv_pdf.py
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
