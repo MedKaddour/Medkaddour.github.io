@@ -18,14 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "Each of these projects represents a challenge I took on, a technology I explored, or a problem I helped solve.",
+          description: "Selected research and engineering work across distributed systems, automation, data tooling, and applied machine learning.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Just a few brave repos out here surviving with minimal commits.",
+        },{id: "nav-code",
+          title: "code",
+          description: "Public repositories, tooling ecosystems, and selected code related to my work.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
