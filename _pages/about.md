@@ -12,7 +12,7 @@ profile:
   more_info: >
     <p>Team STACK</p>
     <p>Inria</p>
-    <p><a href="mailto:medkaddourr@gmail.com">Sidi Mohammed Kaddour</a></p>
+    <p><a href="mailto:medkaddourr@gmail.com">medkaddourr@gmail.com</a></p>
 
 selected_papers: true
 social: true

@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "Sidi Mohammed Kaddour",
-    "label": " R&D Engineer",
-    "email": "sidi-mohammed.kaddour@imt-atlantique.fr",
+    "label": "R&D Engineer",
+    "email": "medkaddourr@gmail.com",
     "phone": "+33 751 367 949",
-    "url": "https://gitlab.inria.fr/sikaddou",
+    "url": "https://medkaddour.github.io",
     "summary": "Scientific researcher focused on feedback mechanisms for Edge-to-Cloud applications, adaptive systems, and monitoring.",
     "location": {
       "address": "90 BD de Poilus",
@@ -124,7 +124,6 @@
   "skills": [
     {
       "name": "Programming",
-      "level": "Advanced",
       "keywords": ["Python", "Java", "C/C++", "Delphi", "JavaScript"]
     },
     {
