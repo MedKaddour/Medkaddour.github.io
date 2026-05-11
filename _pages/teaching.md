@@ -70,7 +70,9 @@ nav_order: 6
 
       <p>{{ item.description }}</p>
     </article>
-  {% endfor %}
+
+{% endfor %}
+
 </div>
 
 ## Supervision Activities
@@ -107,5 +109,7 @@ nav_order: 6
         {% endif %}
       </div>
     </article>
-  {% endfor %}
+
+{% endfor %}
+
 </div>
