@@ -78,7 +78,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-exciting-news-i-am-honored-to-serve-as-co-web-chair-for-the-18th-ieee-acm-international-conference-on-utility-and-cloud-computing-ucc-2025-and-the-12th-ieee-acm-international-conference-on-big-data-computing-applications-and-technologies-bdcat-2025-which-will-be-held-in-nantes-france-looking-forward-to-contributing-to-the-success-of-these-conferences",
+            },},{id: "news-started-a-new-position-as-r-amp-amp-d-engineer-at-inria-stack-team-nantes-working-on-coansible-an-extension-that-brings-concerto-s-coordination-model-into-ansible-for-adaptive-distributed-deployments",
+          title: 'Started a new position as R&amp;amp;amp;D Engineer at Inria (STACK team, Nantes), working...',
+          description: "",
+          section: "News",},{id: "news-exciting-news-i-am-honored-to-serve-as-co-web-chair-for-the-18th-ieee-acm-international-conference-on-utility-and-cloud-computing-ucc-2025-and-the-12th-ieee-acm-international-conference-on-big-data-computing-applications-and-technologies-bdcat-2025-which-will-be-held-in-nantes-france-looking-forward-to-contributing-to-the-success-of-these-conferences",
           title: '📰 Exciting News! I am honored to serve as Co-Web Chair for the...',
           description: "",
           section: "News",},{id: "projects-erbuilder",
