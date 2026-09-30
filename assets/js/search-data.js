@@ -51,7 +51,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-started-a-new-position-at-inria",
+            },{id: "post-the-fix-that-makes-edge-failures-worse",
+        
+          title: "The fix that makes edge failures worse",
+        
+        description: "When restarting or scaling is not an option, how do you deploy critical data-processing and decision-making apps at the edge and keep them from failing?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/the-fix-that-makes-edge-failures-worse/";
+          
+        },
+      },{id: "post-started-a-new-position-at-inria",
         
           title: "Started a New Position at Inria",
         
