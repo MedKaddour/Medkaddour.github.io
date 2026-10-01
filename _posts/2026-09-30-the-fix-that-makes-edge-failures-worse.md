@@ -21,7 +21,7 @@ Nothing had crashed at the start. The tracker was working, just too slowly, and 
 
 <div class="row justify-content-center mt-3 mb-3">
   <div class="col-sm-10 col-md-8">
-    {% include figure.liquid loading="eager" path="assets/img/edge-failure-timeline.png" class="img-fluid rounded z-depth-1" alt="Timeline of the scenario: at T+00:00 every camera streams to one edge device; at T+00:30 the tracker falls behind; at T+00:45 the autoscaler adds a copy on the same device; at T+01:00 the cameras are split and each copy sees half the path; at T+01:15 the device runs out of memory and the tracker is restarted; at T+01:20 it no longer knows who it was following. The health status reads OK at every step." %}
+    {% include figure.liquid loading="eager" path="assets/img/edge-failure-timeline.png" class="img-fluid rounded z-depth-1" alt="Timeline of the scenario: at T+00:00 every camera streams to one edge device; at T+00:30 the tracker falls behind; at T+00:45 the autoscaler adds a copy on the same device; at T+01:00 the cameras are split and each copy sees half the path; at T+01:15 the device runs out of memory and the tracker is restarted; at T+01:20 it no longer knows who it was following. The health status reads OK at every step except the out-of-memory kill, and is back to OK after the restart." %}
   </div>
 </div>
 
