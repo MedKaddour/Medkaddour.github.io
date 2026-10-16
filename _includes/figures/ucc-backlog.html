@@ -1,0 +1,602 @@
+<figure class="ucc-backlog">
+  <style>
+    .ucc-backlog {
+      --ink: #0b0b0b;
+      --ink2: #52514e;
+      --mute: #898781;
+      --grid: #e1e0d9;
+      --axis: #c3c2b7;
+      --surf: #ffffff;
+      position: relative;
+      margin: 1.5rem 0;
+    }
+    html[data-theme="dark"] .ucc-backlog {
+      --ink: #f0efec;
+      --ink2: #c3c2b7;
+      --mute: #898781;
+      --grid: #2c2c2a;
+      --axis: #383835;
+      --surf: #1c1c1d;
+    }
+    .ucc-backlog .hd {
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+    }
+    .ucc-backlog .sub {
+      color: var(--ink2);
+      font-size: 0.9rem;
+      margin: 0.1rem 0 0.5rem;
+    }
+    .ucc-backlog .lg {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      font-size: 0.85rem;
+      color: var(--ink2);
+      margin-bottom: 0.25rem;
+    }
+    .ucc-backlog .lg i {
+      display: inline-block;
+      width: 14px;
+      height: 3px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-right: 0.4rem;
+    }
+    .ucc-backlog svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+    .ucc-backlog .g {
+      stroke: var(--grid);
+      stroke-width: 1;
+    }
+    .ucc-backlog .ax {
+      stroke: var(--axis);
+      stroke-width: 1;
+    }
+    .ucc-backlog .t {
+      fill: var(--mute);
+      font-size: 14px;
+    }
+    .ucc-backlog .lb {
+      fill: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .ucc-backlog .lv {
+      fill: var(--ink2);
+      font-size: 13px;
+    }
+    .ucc-backlog.narrow .dl {
+      display: none;
+    }
+    .ucc-backlog.narrow .t {
+      font-size: 19px;
+    }
+    .ucc-backlog .ctl {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--ink2);
+      margin-top: 0.25rem;
+    }
+    .ucc-backlog .ctl button {
+      font: inherit;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--axis);
+      border-radius: 6px;
+      padding: 0.15rem 0.6rem;
+      cursor: pointer;
+    }
+    .ucc-backlog .ctl button:focus-visible {
+      outline: 2px solid var(--ink2);
+      outline-offset: 2px;
+    }
+    .ucc-backlog .clk {
+      font-variant-numeric: tabular-nums;
+    }
+    .ucc-backlog path {
+      fill: none;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .ucc-backlog circle {
+      stroke: var(--surf);
+      stroke-width: 2;
+    }
+    .ucc-backlog .xh {
+      stroke: var(--axis);
+      stroke-width: 1;
+    }
+    .ucc-backlog .hit {
+      fill: transparent;
+      cursor: crosshair;
+    }
+    .ucc-backlog .tip {
+      position: absolute;
+      pointer-events: none;
+      background: var(--surf);
+      color: var(--ink);
+      border: 1px solid var(--axis);
+      border-radius: 6px;
+      padding: 0.35rem 0.55rem;
+      font-size: 0.8rem;
+      line-height: 1.35;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      display: none;
+      white-space: nowrap;
+    }
+    .ucc-backlog .tip i {
+      display: inline-block;
+      width: 10px;
+      height: 3px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-right: 0.35rem;
+    }
+    .ucc-backlog details {
+      font-size: 0.85rem;
+      color: var(--ink2);
+      margin-top: 0.5rem;
+    }
+    .ucc-backlog table {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+    .ucc-backlog td,
+    .ucc-backlog th {
+      padding: 0.1rem 0.6rem;
+      text-align: right;
+    }
+    .ucc-backlog figcaption {
+      color: var(--ink2);
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+    .ucc-backlog .s0 {
+      stroke: #86b6ef;
+    }
+    .ucc-backlog .d0,
+    .ucc-backlog .k0 {
+      fill: #86b6ef;
+      background: #86b6ef;
+    }
+    .ucc-backlog .s1 {
+      stroke: #2a78d6;
+    }
+    .ucc-backlog .d1,
+    .ucc-backlog .k1 {
+      fill: #2a78d6;
+      background: #2a78d6;
+    }
+    .ucc-backlog .s2 {
+      stroke: #104281;
+    }
+    .ucc-backlog .d2,
+    .ucc-backlog .k2 {
+      fill: #104281;
+      background: #104281;
+    }
+    html[data-theme="dark"] .ucc-backlog .s0 {
+      stroke: #1c5cab;
+    }
+    html[data-theme="dark"] .ucc-backlog .d0,
+    html[data-theme="dark"] .ucc-backlog .k0 {
+      fill: #1c5cab;
+      background: #1c5cab;
+    }
+    html[data-theme="dark"] .ucc-backlog .s1 {
+      stroke: #3987e5;
+    }
+    html[data-theme="dark"] .ucc-backlog .d1,
+    html[data-theme="dark"] .ucc-backlog .k1 {
+      fill: #3987e5;
+      background: #3987e5;
+    }
+    html[data-theme="dark"] .ucc-backlog .s2 {
+      stroke: #b7d3f6;
+    }
+    html[data-theme="dark"] .ucc-backlog .d2,
+    html[data-theme="dark"] .ucc-backlog .k2 {
+      fill: #b7d3f6;
+      background: #b7d3f6;
+    }
+  </style>
+  <p class="hd">At the highest rate, the object recognizer never catches up</p>
+  <p class="sub">Response time in minutes, at three rates of animal appearances in the footage</p>
+  <div class="lg">
+    <span><i class="k0"></i>5 per hour on each camera</span><span><i class="k1"></i>5, 10 and 15 per hour</span
+    ><span><i class="k2"></i>30 per hour on each camera</span>
+  </div>
+  <svg
+    viewBox="0 0 640 330"
+    role="img"
+    aria-label="Line chart of the object recognizer's response time over about 33 minutes, at three appearance rates. At 30 appearances per hour on each camera it climbs steadily and ends at about 25 minutes. At 5, 10 and 15 per hour it climbs to about 14 minutes and ends at 11. At 5 per hour it climbs to about 12 minutes, then drains to about 1 minute."
+  >
+    <line class="g" x1="44" x2="490" y1="276.0" y2="276.0" />
+    <text class="t" x="36" y="280.0" text-anchor="end">0</text>
+    <line class="g" x1="44" x2="490" y1="227.9" y2="227.9" />
+    <text class="t" x="36" y="231.9" text-anchor="end">5</text>
+    <line class="g" x1="44" x2="490" y1="179.7" y2="179.7" />
+    <text class="t" x="36" y="183.7" text-anchor="end">10</text>
+    <line class="g" x1="44" x2="490" y1="131.6" y2="131.6" />
+    <text class="t" x="36" y="135.6" text-anchor="end">15</text>
+    <line class="g" x1="44" x2="490" y1="83.4" y2="83.4" />
+    <text class="t" x="36" y="87.4" text-anchor="end">20</text>
+    <line class="g" x1="44" x2="490" y1="35.3" y2="35.3" />
+    <text class="t" x="36" y="39.3" text-anchor="end">25</text>
+    <text class="t" x="44.0" y="294" text-anchor="middle">0</text>
+    <text class="t" x="109.6" y="294" text-anchor="middle">5</text>
+    <text class="t" x="175.2" y="294" text-anchor="middle">10</text>
+    <text class="t" x="240.8" y="294" text-anchor="middle">15</text>
+    <text class="t" x="306.4" y="294" text-anchor="middle">20</text>
+    <text class="t" x="371.9" y="294" text-anchor="middle">25</text>
+    <text class="t" x="437.5" y="294" text-anchor="middle">30</text>
+    <line class="ax" x1="44" x2="490" y1="276" y2="276" />
+    <text class="t" x="267.0" y="326" text-anchor="middle">minutes into the run</text>
+    <clipPath id="ucc-clip"><rect class="clip" x="38" y="0" width="458" height="330" /></clipPath>
+    <g clip-path="url(#ucc-clip)">
+      <path
+        class="s0"
+        d="M162.5,267.5 L168.7,267.5 L175.6,258.3 L181.8,258.3 L188.7,249.1 L194.9,249.1 L201.8,253.0 L208.1,253.0 L214.9,243.5 L221.2,243.5 L228.0,234.3 L234.2,234.3 L241.1,224.8 L247.3,224.8 L254.2,215.2 L260.4,215.2 L267.3,206.0 L273.5,206.0 L280.4,196.8 L286.6,196.8 L293.5,187.3 L299.8,187.3 L306.6,178.1 L312.8,178.1 L319.7,168.9 L325.9,168.9 L332.8,159.0 L339.0,159.0 L345.9,229.0 L352.1,229.0 L359.0,219.5 L365.2,219.5 L372.1,210.3 L379.0,210.3 L385.2,212.9 L392.1,212.9 L398.3,211.6 L405.2,211.6 L411.4,211.6 L418.2,211.6 L424.5,266.5 L431.4,266.5 L437.6,266.5 L444.5,266.5 L450.7,266.5 L457.6,266.5 L463.8,274.4 L470.7,274.4 L476.9,264.8 L483.7,264.8"
+      />
+      <circle class="d0" cx="483.7" cy="264.8" r="4" />
+      <path
+        class="s1"
+        d="M136.1,269.8 L142.3,269.8 L149.0,265.8 L155.8,265.8 L161.9,256.3 L168.7,256.3 L175.4,247.2 L181.6,247.2 L188.3,237.7 L195.1,237.7 L201.2,228.2 L208.0,228.2 L214.7,219.1 L220.9,219.1 L227.6,209.6 L234.4,209.6 L240.5,200.5 L247.3,200.5 L254.0,191.0 L260.2,191.0 L266.9,181.9 L273.7,181.9 L280.4,224.2 L286.6,224.2 L293.3,241.3 L300.1,241.3 L306.2,231.9 L313.0,231.9 L319.7,222.4 L325.9,222.4 L332.6,216.5 L339.4,216.5 L345.5,207.4 L352.3,207.4 L359.0,197.9 L365.2,197.9 L371.9,188.5 L378.7,188.5 L384.8,179.3 L391.6,179.3 L398.4,169.8 L404.5,169.8 L411.3,160.7 L418.0,160.7 L424.1,151.2 L430.9,151.2 L437.4,141.5 L444.0,141.5 L450.6,148.9 L457.3,148.9 L463.4,165.8 L470.2,165.8 L476.9,170.2"
+      />
+      <circle class="d1" cx="476.9" cy="170.2" r="4" />
+      <path
+        class="s2"
+        d="M70.2,273.2 L77.1,273.2 L83.3,263.6 L90.2,263.6 L96.4,253.9 L103.2,253.9 L109.5,252.5 L116.4,252.5 L122.6,242.9 L129.5,242.9 L135.7,233.9 L142.6,233.9 L148.8,224.2 L155.7,224.2 L162.5,214.6 L168.7,214.6 L175.6,205.6 L181.8,205.6 L188.7,195.9 L194.9,195.9 L201.8,187.0 L208.1,187.0 L214.9,177.3 L221.2,177.3 L228.0,167.6 L234.2,167.6 L241.1,158.6 L247.3,158.6 L254.2,171.8 L260.4,171.8 L267.3,162.1 L273.5,162.1 L280.4,153.1 L286.6,153.1 L293.5,154.5 L299.8,154.5 L306.6,144.8 L312.8,144.8 L319.7,135.9 L325.9,135.9 L332.8,126.9 L339.0,126.9 L345.9,117.2 L352.1,117.2 L359.0,108.3 L365.2,108.3 L372.1,98.6 L379.0,98.6 L385.2,89.6 L392.1,89.6 L398.3,80.0 L405.2,80.0 L411.4,71.0 L418.2,71.0 L424.5,61.3 L431.4,61.3 L437.6,55.8 L444.5,55.8 L450.7,46.8 L457.6,46.8 L463.8,37.5 L470.7,37.5 L476.3,32.0"
+      />
+      <circle class="d2" cx="476.3" cy="32.0" r="4" />
+    </g>
+    <g class="dl">
+      <text class="lb" x="500" y="33.0">30 per hour on each camera</text>
+      <text class="lv" x="500" y="47.0">ends at 25 min</text>
+      <text class="lb" x="500" y="171.2">5, 10 and 15 per hour</text>
+      <text class="lv" x="500" y="185.2">ends at 11 min</text>
+      <text class="lb" x="500" y="265.8">5 per hour on each camera</text>
+      <text class="lv" x="500" y="279.8">ends at 1 min</text>
+    </g>
+    <line class="xh" x1="0" x2="0" y1="16" y2="276" style="display: none" />
+    <rect class="hit" x="44" y="16" width="446" height="260" />
+  </svg>
+  <div class="ctl"><button type="button" class="rp">Replay the run</button><span class="clk" aria-live="off"></span></div>
+  <div class="tip"></div>
+  <details>
+    <summary>Data table</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Minute</th>
+          <th>5 per hour on each camera</th>
+          <th>5, 10 and 15 per hour</th>
+          <th>30 per hour on each camera</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>–</td>
+          <td>–</td>
+          <td>–</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>–</td>
+          <td>–</td>
+          <td>2.4</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>1.8</td>
+          <td>3.0</td>
+          <td>7.3</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>5.3</td>
+          <td>7.8</td>
+          <td>12.2</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>10.2</td>
+          <td>4.6</td>
+          <td>13.6</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>6.8</td>
+          <td>9.1</td>
+          <td>18.4</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>1.0</td>
+          <td>14.0</td>
+          <td>22.9</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Values recovered from the marker positions in the paper's figures; the full series is in
+      <a href="{{ '/assets/json/ucc-appearance-rate.json' | relative_url }}">this JSON file</a>.
+    </p>
+  </details>
+  <figcaption>
+    Animals appear at random around each rate, so a low rate can still bring a burst, and each line starts at its run's first measurement. Data from
+    the UCC '25 paper's three appearance-rate runs, recovered from its published figures.
+  </figcaption>
+  <script>
+    (function () {
+      var f = document.currentScript.closest("figure"),
+        svg = f.querySelector("svg"),
+        hit = f.querySelector(".hit"),
+        xh = f.querySelector(".xh"),
+        tip = f.querySelector(".tip"),
+        D = {
+          0: [
+            [542, 53],
+            [571, 53],
+            [602, 110],
+            [630, 110],
+            [662, 168],
+            [690, 168],
+            [722, 143],
+            [750, 143],
+            [782, 203],
+            [810, 203],
+            [842, 260],
+            [870, 260],
+            [902, 319],
+            [930, 319],
+            [962, 379],
+            [990, 379],
+            [1021, 436],
+            [1050, 436],
+            [1081, 493],
+            [1110, 493],
+            [1141, 553],
+            [1170, 553],
+            [1201, 610],
+            [1230, 610],
+            [1261, 667],
+            [1290, 667],
+            [1321, 729],
+            [1350, 729],
+            [1381, 293],
+            [1409, 293],
+            [1441, 352],
+            [1469, 352],
+            [1501, 409],
+            [1532, 409],
+            [1561, 393],
+            [1592, 393],
+            [1620, 401],
+            [1652, 401],
+            [1680, 401],
+            [1712, 401],
+            [1740, 59],
+            [1772, 59],
+            [1800, 59],
+            [1832, 59],
+            [1860, 59],
+            [1892, 59],
+            [1920, 10],
+            [1952, 10],
+            [1980, 70],
+            [2011, 70],
+          ],
+          1: [
+            [421, 39],
+            [449, 39],
+            [480, 64],
+            [511, 64],
+            [539, 123],
+            [570, 123],
+            [601, 180],
+            [629, 180],
+            [660, 239],
+            [691, 239],
+            [719, 298],
+            [750, 298],
+            [781, 354],
+            [809, 354],
+            [840, 414],
+            [871, 414],
+            [899, 470],
+            [930, 470],
+            [961, 530],
+            [989, 530],
+            [1020, 586],
+            [1051, 586],
+            [1082, 323],
+            [1110, 323],
+            [1140, 216],
+            [1171, 216],
+            [1199, 275],
+            [1230, 275],
+            [1261, 334],
+            [1289, 334],
+            [1320, 370],
+            [1351, 370],
+            [1379, 427],
+            [1410, 427],
+            [1441, 486],
+            [1469, 486],
+            [1500, 546],
+            [1531, 546],
+            [1559, 602],
+            [1590, 602],
+            [1621, 661],
+            [1649, 661],
+            [1680, 718],
+            [1711, 718],
+            [1739, 777],
+            [1770, 777],
+            [1800, 838],
+            [1830, 838],
+            [1860, 792],
+            [1890, 792],
+            [1918, 686],
+            [1949, 686],
+            [1980, 659],
+          ],
+          2: [
+            [120, 17],
+            [151, 17],
+            [180, 77],
+            [211, 77],
+            [240, 138],
+            [271, 138],
+            [300, 146],
+            [331, 146],
+            [360, 206],
+            [391, 206],
+            [419, 262],
+            [451, 262],
+            [479, 323],
+            [511, 323],
+            [542, 383],
+            [571, 383],
+            [602, 439],
+            [630, 439],
+            [662, 499],
+            [690, 499],
+            [722, 555],
+            [750, 555],
+            [782, 615],
+            [810, 615],
+            [842, 675],
+            [870, 675],
+            [902, 731],
+            [930, 731],
+            [962, 650],
+            [990, 650],
+            [1021, 710],
+            [1050, 710],
+            [1081, 766],
+            [1110, 766],
+            [1141, 757],
+            [1170, 757],
+            [1201, 817],
+            [1230, 817],
+            [1261, 873],
+            [1290, 873],
+            [1321, 929],
+            [1350, 929],
+            [1381, 989],
+            [1409, 989],
+            [1441, 1045],
+            [1469, 1045],
+            [1501, 1105],
+            [1532, 1105],
+            [1561, 1161],
+            [1592, 1161],
+            [1620, 1222],
+            [1652, 1222],
+            [1680, 1277],
+            [1712, 1277],
+            [1740, 1338],
+            [1772, 1338],
+            [1800, 1372],
+            [1832, 1372],
+            [1860, 1428],
+            [1892, 1428],
+            [1920, 1486],
+            [1952, 1486],
+            [1977, 1520],
+          ],
+        },
+        N = ["5 per hour on each camera", "5, 10 and 15 per hour", "30 per hour on each camera"],
+        ml = 44,
+        pw = 446,
+        XMAX = 34;
+      function show(e) {
+        var r = svg.getBoundingClientRect(),
+          sx = 640 / r.width,
+          vx = (e.clientX - r.left) * sx;
+        var t = Math.max(0, Math.min(XMAX * 60, ((vx - ml) / pw) * XMAX * 60)),
+          x = ml + (t / 60 / XMAX) * pw;
+        xh.setAttribute("x1", x);
+        xh.setAttribute("x2", x);
+        xh.style.display = "";
+        var h = "<b>" + (t / 60).toFixed(1) + " min into the run</b>";
+        for (var i = 0; i < 3; i++) {
+          var p = null,
+            b = 1e9;
+          D[i].forEach(function (q) {
+            var dd = Math.abs(q[0] - t);
+            if (dd < b) {
+              b = dd;
+              p = q;
+            }
+          });
+          h += '<br><i class="k' + i + '"></i>' + N[i] + ": " + (b < 31 ? (p[1] / 60).toFixed(1) + " min" : "no data");
+        }
+        tip.innerHTML = h;
+        tip.style.display = "block";
+        var fr = f.getBoundingClientRect(),
+          px = e.clientX - fr.left + 14,
+          w = tip.offsetWidth;
+        if (px + w > fr.width) px = e.clientX - fr.left - w - 14;
+        tip.style.left = Math.max(0, px) + "px";
+        tip.style.top = e.clientY - fr.top - tip.offsetHeight - 10 + "px";
+      }
+      function hide() {
+        tip.style.display = "none";
+        xh.style.display = "none";
+      }
+      var clip = f.querySelector(".clip"),
+        dl = f.querySelector(".dl"),
+        clk = f.querySelector(".clk"),
+        rp = f.querySelector(".rp"),
+        raf = 0;
+      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function fit() {
+        var nar = f.clientWidth < 560;
+        f.classList.toggle("narrow", nar);
+        svg.setAttribute("viewBox", "0 0 " + (nar ? ml + pw + 14 : 640) + " 330");
+      }
+      fit();
+      window.addEventListener("resize", fit);
+      function set(t) {
+        clip.setAttribute("width", (t / XMAX) * pw + 6);
+        dl.style.opacity = t >= XMAX ? 1 : 0;
+        clk.textContent = t >= XMAX ? "" : "minute " + Math.floor(t) + " of the run";
+      }
+      function play() {
+        if (reduce) {
+          set(XMAX);
+          return;
+        }
+        cancelAnimationFrame(raf);
+        var t0 = null,
+          dur = 7000;
+        function step(ts) {
+          if (t0 === null) t0 = ts;
+          var k = Math.min(1, (ts - t0) / dur);
+          set(k * XMAX);
+          if (k < 1) raf = requestAnimationFrame(step);
+        }
+        raf = requestAnimationFrame(step);
+      }
+      dl.style.transition = "opacity .4s";
+      set(XMAX);
+      rp.addEventListener("click", play);
+      hit.addEventListener("pointermove", show);
+      hit.addEventListener("pointerdown", show);
+      hit.addEventListener("pointerleave", hide);
+    })();
+  </script>
+</figure>
