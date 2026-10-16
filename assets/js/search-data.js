@@ -51,7 +51,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-the-fix-that-makes-edge-failures-worse",
+            },{id: "post-seeing-the-problem-was-the-easy-part",
+        
+          title: "Seeing the problem was the easy part",
+        
+        description: "What we learned from making an edge-to-cloud video pipeline report its own health, and why seeing a backlog is not the same as knowing how to fix it.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/seeing-the-problem-was-the-easy-part/";
+          
+        },
+      },{id: "post-the-fix-that-makes-edge-failures-worse",
         
           title: "The fix that makes edge failures worse",
         
