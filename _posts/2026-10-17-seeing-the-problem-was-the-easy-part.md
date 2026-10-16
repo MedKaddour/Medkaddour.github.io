@@ -7,13 +7,13 @@ tags: edge-to-cloud observability self-healing resilience research
 categories: research
 ---
 
-Near the end of our busiest run, a bear walks past a camera. The motion detector next to it sees something move and forwards the frame to the object recognizer. The recognizer will find the bear. It just won't get to that frame for another 25 minutes.
+Near the end of our busiest run, a tiger walks past a camera. The motion detector next to it sees something move and forwards the frame to the object recognizer. The recognizer will find the tiger. It just won't get to that frame for another 25 minutes.
 
-The recognizer is working the whole time. It's answering frames that arrived long before the bear, and every new frame joins the back of the line.
+The recognizer is working the whole time. It's answering frames that arrived long before the tiger, and every new frame joins the back of the line.
 
 In my [last post](/blog/2026/the-fix-that-makes-edge-failures-worse/), I described a tracker that fell behind while its health checks stayed green, and promised to write about what we learned working on these problems at IMT Atlantique. This is the first half: getting the application to say what's wrong. The second half, getting the system to do the right thing about it, is still in progress.
 
-## A bear, not an earthquake
+## A tiger, not an earthquake
 
 Our use case was less dramatic than an earthquake. It was a video surveillance system that watches for dangerous animals and alerts residents and authorities when one shows up.
 
@@ -23,7 +23,7 @@ The [application is open source](https://gitlab.inria.fr/STACK-RESEARCH-GROUP/so
 
 ## What the platform sees, and what matters
 
-Out of the box, Kubernetes tells you about containers: CPU, memory, network, whether the process is up. Those are the numbers an autoscaler acts on. But when a bear walks past a camera, how long until someone gets the alert? None of them can tell you.
+Out of the box, Kubernetes tells you about containers: CPU, memory, network, whether the process is up. Those are the numbers an autoscaler acts on. But when a tiger walks past a camera, how long until someone gets the alert? None of them can tell you.
 
 Only the application knows that. So the developers instrument it with OpenTelemetry: frame rate, processing time, detection accuracy, how many frames each motion detector forwards. Those go to Prometheus, next to the infrastructure metrics.
 
@@ -39,7 +39,7 @@ The most useful experiment was also the simplest. We generated footage where ani
 
 With all three cameras at 30 appearances per hour, the recognizer's response time climbs for the whole run. It ends at about 25 minutes and never comes back down. In the paper's plots it rises in steps, each time the motion detectors forward a new batch of frames. Even at 5 appearances per hour, it climbed to about 12 minutes before the backlog drained.
 
-That's the first part of the last post's story, measured: a service that is working, and falling further behind. Frames with motion arrive faster than the recognizer can answer them, and each new one waits behind all the others. These runs measured the backlog. They didn't test what to do about it.
+That's the first part of the last post's story, measured: a service that is working, and falling further behind. Frames with motion arrive faster than the recognizer can answer them, and each new one waits behind all the others. Every cat that crosses a camera is motion too, and it waits in the same line as the tiger. These runs measured the backlog. They didn't test what to do about it.
 
 ## So what should the system do?
 
@@ -53,7 +53,7 @@ If the site is connected, the obvious fix is the cloud. Send the frames there an
 
 Sometimes the link is up but slow. Then more replicas don't help, and neither does a lighter model: the frames spend their time on the network, not in the recognizer. What helps is sending less over the link, which means fewer frames.
 
-Now take the earthquake from the last post. The link to the cloud is damaged or gone, and the recognizer has to run on the edge, next to the detectors. There's no spare machine to add a replica to, and, as in the last post's thought experiment, a second copy on the same device can make things worse. What's left is to do less work per frame, look at fewer frames, or both. A lighter model answers faster but misses more animals. A lower frame rate sends fewer frames to the recognizer, but a bear that walks past between two frames is never seen.
+Now take the earthquake from the last post. The link to the cloud is damaged or gone, and the recognizer has to run on the edge, next to the detectors. There's no spare machine to add a replica to, and, as in the last post's thought experiment, a second copy on the same device can make things worse. What's left is to do less work per frame, look at fewer frames, or both. A lighter model answers faster, but it gets more wrong: it may take a cat for a tiger and wake people for nothing, or take the tiger for a cat and say nothing. A lower frame rate sends fewer frames to the recognizer, but a tiger that walks past between two frames is never seen.
 
 Each of these fixes costs something different: money, bandwidth, accuracy, or frames nobody looks at. Which cost is acceptable isn't in any metric. It depends on whether the cloud is reachable right now and how fast the link is, and on how much detection the people relying on the alert can afford to lose. The developer knows that. The platform doesn't.
 

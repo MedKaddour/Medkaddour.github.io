@@ -11,6 +11,9 @@
       --q: #c27a00;
       --bad: #d4442f;
       --good: #2e8b57;
+      --tiger: #e07b22;
+      --stripe: #2b2118;
+      --cat: #7a8796;
       margin: 1.5rem 0;
     }
     html[data-theme="dark"] .ucc-pipe {
@@ -24,6 +27,9 @@
       --q: #f2a93b;
       --bad: #f06a55;
       --good: #5cc28a;
+      --tiger: #f0953a;
+      --stripe: #1a140e;
+      --cat: #aab6c3;
     }
     .ucc-pipe svg {
       width: 100%;
@@ -195,22 +201,52 @@
       loop adds two replicas in the cloud; the queue drains and response time comes back under the objective. Then the link slows down and response
       time climbs again; replicas and a lighter model won't help because the delay is on the link, so the loop sends fewer frames and response time
       comes back down. Then the link is cut: the cloud is unreachable, response time spikes, and the recognizer restarts on the edge with a lighter
-      model and fewer frames, bringing response time back down. An illustration of how the loop could respond, not measured data.
+      model and fewer frames, bringing response time back down. Tigers and cats walk past the cameras; each tiger that gets through raises an alert,
+      and in the last phase the lighter model takes a cat for a tiger: a false alarm. An illustration of how the loop could respond, not measured
+      data.
     </desc>
     <defs>
-      <path id="wc0" d="M 96 232 L 200 232" />
+      <path id="wc0" d="M 122 232 L 200 232" />
+      <path id="wwalk0" d="M 8 256 L 54 256" />
       <path id="wm0" d="M 244 232 C 290 232, 300 312, 320 312 L 400 312 Q 500 250 600 312 C 640 300, 680 242, 712 242" />
       <path id="we0" d="M 244 232 C 290 232, 290 397, 320 397" />
-      <path id="wc1" d="M 96 312 L 200 312" />
+      <path id="wc1" d="M 122 312 L 200 312" />
+      <path id="wwalk1" d="M 8 336 L 54 336" />
       <path id="wm1" d="M 244 312 C 290 312, 300 312, 320 312 L 400 312 Q 500 250 600 312 C 640 300, 680 242, 712 242" />
       <path id="we1" d="M 244 312 C 290 312, 290 397, 320 397" />
-      <path id="wc2" d="M 96 392 L 200 392" />
+      <path id="wc2" d="M 122 392 L 200 392" />
+      <path id="wwalk2" d="M 8 416 L 54 416" />
       <path id="wm2" d="M 244 392 C 290 392, 300 312, 320 312 L 400 312 Q 500 250 600 312 C 640 300, 680 242, 712 242" />
       <path id="we2" d="M 244 392 C 290 392, 290 397, 320 397" />
       <path id="wr1" d="M 400 312 Q 500 250 600 312 C 615 392, 637 392, 657 369" />
       <path id="wr2" d="M 400 312 Q 500 250 600 312 C 615 392, 719 392, 739 369" />
       <path id="wa" d="M 739 215 L 739 186 L 884 186" />
       <path id="wae" d="M 347 370 L 347 150 L 884 150 L 884 168" />
+      <symbol id="wcat" viewBox="0 0 26 20" overflow="visible">
+        <path d="M5 11 Q0 7 2 2" fill="none" stroke-width="2" stroke-linecap="round" style="stroke: var(--cat)" />
+        <ellipse cx="11" cy="12" rx="7.5" ry="4.6" />
+        <circle cx="19" cy="8" r="4" />
+        <path d="M16.2 5.6 L16.8 1.4 L19 4.4 Z M19.6 4.3 L21.9 1.4 L22.3 5.7 Z" />
+        <rect x="5.4" y="14.5" width="2.2" height="5" rx="1" />
+        <rect x="13.6" y="14.5" width="2.2" height="5" rx="1" />
+      </symbol>
+      <symbol id="wbear" viewBox="0 0 44 26" overflow="visible">
+        <path d="M5 12 Q-1 9 1 3" fill="none" stroke-width="2.6" stroke-linecap="round" style="stroke: var(--tiger)" />
+        <ellipse cx="18" cy="14" rx="14" ry="7.5" />
+        <circle cx="34" cy="10" r="6.4" />
+        <path d="M29.2 5.6 L30.2 1.2 L32.8 4.4 Z M35.4 4.2 L38.4 1.4 L38.8 6 Z" />
+        <rect x="7" y="18" width="4" height="7.5" rx="1.8" />
+        <rect x="13" y="18.5" width="4" height="7" rx="1.8" />
+        <rect x="21" y="18.5" width="4" height="7" rx="1.8" />
+        <rect x="27" y="18" width="4" height="7.5" rx="1.8" />
+        <path
+          d="M11 7.4 L13 14 M16 6.6 L17.4 13 M21 6.6 L21.6 12.6 M26 7.6 L25.6 13 M31.4 5 L32.6 8.4 M36.4 5 L35.6 8.4"
+          fill="none"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          style="stroke: var(--stripe)"
+        />
+      </symbol>
     </defs>
     <rect class="frame" x="1" y="1" width="958" height="498" rx="14" />
     <rect class="chip" x="200" y="12" width="560" height="124" rx="10" />
@@ -320,17 +356,17 @@
       />
     </text>
     <path d="M 300 136 L 300 190 M 660 136 L 660 160" class="line" stroke-width="1.5" stroke-dasharray="3 4" fill="none" />
-    <circle cx="66" cy="232" r="26" class="bg" stroke-width="2" />
-    <rect x="54.3" y="223.4" width="23.4" height="17.2" rx="3" class="soft" />
-    <circle cx="66" cy="232" r="5.2" class="bgf" />
-    <circle cx="66" cy="312" r="26" class="bg" stroke-width="2" />
-    <rect x="54.3" y="303.4" width="23.4" height="17.2" rx="3" class="soft" />
-    <circle cx="66" cy="312" r="5.2" class="bgf" />
-    <circle cx="66" cy="392" r="26" class="bg" stroke-width="2" />
-    <rect x="54.3" y="383.4" width="23.4" height="17.2" rx="3" class="soft" />
-    <circle cx="66" cy="392" r="5.2" class="bgf" />
-    <text class="ink" x="66" y="444" font-size="14" font-weight="600" text-anchor="middle">Cameras</text>
-    <text class="soft mono" x="66" y="462" font-size="11" text-anchor="middle">every frame</text>
+    <circle cx="96" cy="232" r="26" class="bg" stroke-width="2" />
+    <rect x="84.3" y="223.4" width="23.4" height="17.2" rx="3" class="soft" />
+    <circle cx="96" cy="232" r="5.2" class="bgf" />
+    <circle cx="96" cy="312" r="26" class="bg" stroke-width="2" />
+    <rect x="84.3" y="303.4" width="23.4" height="17.2" rx="3" class="soft" />
+    <circle cx="96" cy="312" r="5.2" class="bgf" />
+    <circle cx="96" cy="392" r="26" class="bg" stroke-width="2" />
+    <rect x="84.3" y="383.4" width="23.4" height="17.2" rx="3" class="soft" />
+    <circle cx="96" cy="392" r="5.2" class="bgf" />
+    <text class="ink" x="96" y="444" font-size="14" font-weight="600" text-anchor="middle">Cameras</text>
+    <text class="soft mono" x="96" y="462" font-size="11" text-anchor="middle">every frame</text>
     <rect x="170" y="190" width="230" height="250" rx="12" fill="none" class="edgec" stroke-width="2" />
     <text class="edgef mono" x="184" y="212" font-size="13" font-weight="600">EDGE</text>
     <rect x="200" y="210" width="44" height="44" rx="8" class="edgef" />
@@ -459,6 +495,14 @@
     <path class="soft" d="M 900.9 191.3 L 900.9 184.1 A 9.1 9.1 0 0 1 919.1 184.1 L 919.1 191.3 L 922.0 194.2 L 898.0 194.2 Z" />
     <circle cx="910" cy="197.5" r="2.9" class="soft" />
     <text class="ink" x="910" y="232" font-size="14" font-weight="600" text-anchor="middle">Alert</text>
+    <text class="bad mono" x="910" y="252" font-size="11" font-weight="600" text-anchor="middle" opacity="0">
+      false alarm:
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.88;0.98" values="0;1;0" />
+    </text>
+    <text class="bad mono" x="910" y="266" font-size="11" font-weight="600" text-anchor="middle" opacity="0">
+      a cat
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.88;0.98" values="0;1;0" />
+    </text>
     <use href="#wc0" class="line" fill="none" stroke-width="1.5" />
     <use href="#wc1" class="line" fill="none" stroke-width="1.5" />
     <use href="#wc2" class="line" fill="none" stroke-width="1.5" />
@@ -569,22 +613,22 @@
       <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.71" values="0;1" />
     </circle>
     <circle class="ok" r="5" opacity="0">
-      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.05;0.08;1" calcMode="linear">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.07;0.1;1" calcMode="linear">
         <mpath href="#wa" />
       </animateMotion>
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.05;0.09" values="0;1;0" />
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.07;0.11" values="0;1;0" />
     </circle>
     <circle class="ok" r="5" opacity="0">
-      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.34;0.37;1" calcMode="linear">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.33;0.36;1" calcMode="linear">
         <mpath href="#wa" />
       </animateMotion>
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.34;0.38" values="0;1;0" />
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.33;0.37" values="0;1;0" />
     </circle>
     <circle class="ok" r="5" opacity="0">
-      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.56;0.59;1" calcMode="linear">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.54;0.57;1" calcMode="linear">
         <mpath href="#wa" />
       </animateMotion>
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.56;0.6" values="0;1;0" />
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.54;0.58" values="0;1;0" />
     </circle>
     <circle class="ok" r="5" opacity="0">
       <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.88;0.92;1" calcMode="linear">
@@ -592,6 +636,72 @@
       </animateMotion>
       <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.88;0.93" values="0;1;0" />
     </circle>
+    <use href="#wbear" x="-26.0" y="-31" width="52" height="31" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.02;0.06;1" calcMode="linear">
+        <mpath href="#wwalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.02;0.06" values="0;1;0" />
+    </use>
+    <use href="#wbear" x="-26.0" y="-31" width="52" height="31" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.11;0.155;1" calcMode="linear">
+        <mpath href="#wwalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.11;0.155" values="0;1;0" />
+    </use>
+    <use href="#wcat" x="-15.0" y="-23" width="30" height="23" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.13;0.17;1" calcMode="linear">
+        <mpath href="#wwalk2" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.13;0.17" values="0;1;0" />
+    </use>
+    <use href="#wbear" x="-26.0" y="-31" width="52" height="31" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.16;0.2;1" calcMode="linear">
+        <mpath href="#wwalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.16;0.2" values="0;1;0" />
+    </use>
+    <use href="#wcat" x="-15.0" y="-23" width="30" height="23" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.19;0.23;1" calcMode="linear">
+        <mpath href="#wwalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.19;0.23" values="0;1;0" />
+    </use>
+    <use href="#wbear" x="-26.0" y="-31" width="52" height="31" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.27;0.31;1" calcMode="linear">
+        <mpath href="#wwalk2" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.27;0.31" values="0;1;0" />
+    </use>
+    <use href="#wcat" x="-15.0" y="-23" width="30" height="23" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.33;0.37;1" calcMode="linear">
+        <mpath href="#wwalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.33;0.37" values="0;1;0" />
+    </use>
+    <use href="#wcat" x="-15.0" y="-23" width="30" height="23" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.42;0.46;1" calcMode="linear">
+        <mpath href="#wwalk2" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.42;0.46" values="0;1;0" />
+    </use>
+    <use href="#wbear" x="-26.0" y="-31" width="52" height="31" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.48;0.52;1" calcMode="linear">
+        <mpath href="#wwalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.48;0.52" values="0;1;0" />
+    </use>
+    <use href="#wcat" x="-15.0" y="-23" width="30" height="23" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.66;0.7;1" calcMode="linear">
+        <mpath href="#wwalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.66;0.7" values="0;1;0" />
+    </use>
+    <use href="#wcat" x="-15.0" y="-23" width="30" height="23" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.82;0.86;1" calcMode="linear">
+        <mpath href="#wwalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.82;0.86" values="0;1;0" />
+    </use>
     <g font-size="15" text-anchor="middle">
       <text class="ink" x="480" y="478" opacity="0">
         <tspan font-weight="600">1 · Quiet.</tspan>
@@ -623,18 +733,46 @@
   <svg class="tall" viewBox="0 0 360 512" aria-hidden="true">
     <defs>
       <path id="tc0" d="M 46 192 L 46 236" />
+      <path id="twalk0" d="M 12 206 L 80 206" />
       <path id="tm0" d="M 46 280 C 46 300, 150 296, 150 314 L 150 384" />
       <path id="te0" d="M 46 280 C 46 296, 300 296, 300 280" />
       <path id="tc1" d="M 126 192 L 126 236" />
+      <path id="twalk1" d="M 92 206 L 160 206" />
       <path id="tm1" d="M 126 280 C 126 300, 150 296, 150 314 L 150 384" />
       <path id="te1" d="M 126 280 C 126 296, 300 296, 300 280" />
       <path id="tc2" d="M 206 192 L 206 236" />
+      <path id="twalk2" d="M 172 206 L 240 206" />
       <path id="tm2" d="M 206 280 C 206 300, 150 296, 150 314 L 150 384" />
       <path id="te2" d="M 206 280 C 206 296, 300 296, 300 280" />
       <path id="tr1" d="M 150 302 L 150 352 C 150 368, 218 366, 218 384" />
       <path id="tr2" d="M 150 302 L 150 352 C 150 368, 268 366, 268 384" />
       <path id="ta" d="M 150 432 L 150 466" />
       <path id="tae" d="M 322 258 L 346 258 L 346 486 L 172 486" />
+      <symbol id="tcat" viewBox="0 0 26 20" overflow="visible">
+        <path d="M5 11 Q0 7 2 2" fill="none" stroke-width="2" stroke-linecap="round" style="stroke: var(--cat)" />
+        <ellipse cx="11" cy="12" rx="7.5" ry="4.6" />
+        <circle cx="19" cy="8" r="4" />
+        <path d="M16.2 5.6 L16.8 1.4 L19 4.4 Z M19.6 4.3 L21.9 1.4 L22.3 5.7 Z" />
+        <rect x="5.4" y="14.5" width="2.2" height="5" rx="1" />
+        <rect x="13.6" y="14.5" width="2.2" height="5" rx="1" />
+      </symbol>
+      <symbol id="tbear" viewBox="0 0 44 26" overflow="visible">
+        <path d="M5 12 Q-1 9 1 3" fill="none" stroke-width="2.6" stroke-linecap="round" style="stroke: var(--tiger)" />
+        <ellipse cx="18" cy="14" rx="14" ry="7.5" />
+        <circle cx="34" cy="10" r="6.4" />
+        <path d="M29.2 5.6 L30.2 1.2 L32.8 4.4 Z M35.4 4.2 L38.4 1.4 L38.8 6 Z" />
+        <rect x="7" y="18" width="4" height="7.5" rx="1.8" />
+        <rect x="13" y="18.5" width="4" height="7" rx="1.8" />
+        <rect x="21" y="18.5" width="4" height="7" rx="1.8" />
+        <rect x="27" y="18" width="4" height="7.5" rx="1.8" />
+        <path
+          d="M11 7.4 L13 14 M16 6.6 L17.4 13 M21 6.6 L21.6 12.6 M26 7.6 L25.6 13 M31.4 5 L32.6 8.4 M36.4 5 L35.6 8.4"
+          fill="none"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          style="stroke: var(--stripe)"
+        />
+      </symbol>
     </defs>
     <rect class="chip" x="6" y="6" width="348" height="136" rx="10" />
     <text class="ink" x="20" y="30" font-size="16" font-weight="600">Feedback loop</text>
@@ -839,6 +977,10 @@
     <circle cx="150" cy="486" r="20" class="bg" stroke-width="2" />
     <path class="soft" d="M 142.4 490.4 L 142.4 484.4 A 7.6 7.6 0 0 1 157.6 484.4 L 157.6 490.4 L 160.0 492.8 L 140.0 492.8 Z" />
     <circle cx="150" cy="495.6" r="2.4" class="soft" />
+    <text class="bad mono" x="178" y="490" font-size="11" font-weight="600" text-anchor="start" opacity="0">
+      false alarm: a cat
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.88;0.98" values="0;1;0" />
+    </text>
     <use href="#tc0" class="line" fill="none" stroke-width="1.5" />
     <use href="#tc1" class="line" fill="none" stroke-width="1.5" />
     <use href="#tc2" class="line" fill="none" stroke-width="1.5" />
@@ -949,22 +1091,22 @@
       <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.71" values="0;1" />
     </circle>
     <circle class="ok" r="5" opacity="0">
-      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.05;0.08;1" calcMode="linear">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.07;0.1;1" calcMode="linear">
         <mpath href="#ta" />
       </animateMotion>
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.05;0.09" values="0;1;0" />
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.07;0.11" values="0;1;0" />
     </circle>
     <circle class="ok" r="5" opacity="0">
-      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.34;0.37;1" calcMode="linear">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.33;0.36;1" calcMode="linear">
         <mpath href="#ta" />
       </animateMotion>
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.34;0.38" values="0;1;0" />
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.33;0.37" values="0;1;0" />
     </circle>
     <circle class="ok" r="5" opacity="0">
-      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.56;0.59;1" calcMode="linear">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.54;0.57;1" calcMode="linear">
         <mpath href="#ta" />
       </animateMotion>
-      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.56;0.6" values="0;1;0" />
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.54;0.58" values="0;1;0" />
     </circle>
     <circle class="ok" r="5" opacity="0">
       <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.88;0.92;1" calcMode="linear">
@@ -972,6 +1114,72 @@
       </animateMotion>
       <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.88;0.93" values="0;1;0" />
     </circle>
+    <use href="#tbear" x="-16.0" y="-19" width="32" height="19" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.02;0.06;1" calcMode="linear">
+        <mpath href="#twalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.02;0.06" values="0;1;0" />
+    </use>
+    <use href="#tbear" x="-16.0" y="-19" width="32" height="19" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.11;0.155;1" calcMode="linear">
+        <mpath href="#twalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.11;0.155" values="0;1;0" />
+    </use>
+    <use href="#tcat" x="-9.0" y="-14" width="18" height="14" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.13;0.17;1" calcMode="linear">
+        <mpath href="#twalk2" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.13;0.17" values="0;1;0" />
+    </use>
+    <use href="#tbear" x="-16.0" y="-19" width="32" height="19" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.16;0.2;1" calcMode="linear">
+        <mpath href="#twalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.16;0.2" values="0;1;0" />
+    </use>
+    <use href="#tcat" x="-9.0" y="-14" width="18" height="14" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.19;0.23;1" calcMode="linear">
+        <mpath href="#twalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.19;0.23" values="0;1;0" />
+    </use>
+    <use href="#tbear" x="-16.0" y="-19" width="32" height="19" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.27;0.31;1" calcMode="linear">
+        <mpath href="#twalk2" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.27;0.31" values="0;1;0" />
+    </use>
+    <use href="#tcat" x="-9.0" y="-14" width="18" height="14" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.33;0.37;1" calcMode="linear">
+        <mpath href="#twalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.33;0.37" values="0;1;0" />
+    </use>
+    <use href="#tcat" x="-9.0" y="-14" width="18" height="14" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.42;0.46;1" calcMode="linear">
+        <mpath href="#twalk2" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.42;0.46" values="0;1;0" />
+    </use>
+    <use href="#tbear" x="-16.0" y="-19" width="32" height="19" opacity="0" style="fill: var(--tiger)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.48;0.52;1" calcMode="linear">
+        <mpath href="#twalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.48;0.52" values="0;1;0" />
+    </use>
+    <use href="#tcat" x="-9.0" y="-14" width="18" height="14" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.66;0.7;1" calcMode="linear">
+        <mpath href="#twalk0" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.66;0.7" values="0;1;0" />
+    </use>
+    <use href="#tcat" x="-9.0" y="-14" width="18" height="14" opacity="0" style="fill: var(--cat)">
+      <animateMotion dur="32s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.82;0.86;1" calcMode="linear">
+        <mpath href="#twalk1" />
+      </animateMotion>
+      <animate attributeName="opacity" dur="32s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.82;0.86" values="0;1;0" />
+    </use>
   </svg>
   <p class="cap" aria-hidden="true"></p>
   <div class="ctl"><button type="button" class="pp">Pause</button></div>
@@ -996,7 +1204,7 @@
           ],
           [
             0.62,
-            "<b>5 \u00b7 The link is cut.</b> The cloud is unreachable and there is no room for a replica on the edge, so the recognizer restarts on the edge with a lighter model and fewer frames.",
+            "<b>5 \u00b7 The link is cut.</b> The cloud is unreachable and there is no room for a replica on the edge, so the recognizer restarts on the edge with a lighter model and fewer frames. The cost: a cat can now set off the alarm.",
           ],
         ],
         last = -1,
